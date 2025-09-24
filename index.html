@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clem Goals Page</title>
+  <title>Bao Point Tracker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Hi Bao</h1>
-    <p>First test of how things look</p>
-    <a href="#">I’m a link</a>
-    <br><br>
-    <button>BIG BUTTON</button>
-    <div class="box"></div>
+    <h1>Points Tracker</h1>
+    <ul class="item-list">
+      <li>
+        <label>
+          <input type="checkbox" value="10" class="item"> Item A (10 pts)
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" value="20" class="item"> Item B (20 pts)
+        </label>
+      </li>
+    </ul>
+
+    <div class="total-box">
+      <strong>Total Points:</strong> <span id="total">0</span>
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
