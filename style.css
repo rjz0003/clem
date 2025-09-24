@@ -1,15 +1,12 @@
-/* Reset some default browser styles */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Center content */
 .container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 40px auto;
   padding: 20px;
   background: white;
@@ -17,44 +14,29 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Headings */
-h1, h2, h3 {
+h1 {
+  text-align: center;
   color: #2c3e50;
-  margin-bottom: 15px;
 }
 
-/* Links */
-a {
-  color: #3498db;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+.item-list {
+  list-style: none;
+  padding: 0;
 }
 
-/* Buttons */
-button {
+.item-list li {
+  margin: 10px 0;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 5px;
+}
+
+.total-box {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
   background: #3498db;
   color: white;
-  border: none;
-  padding: 10px 15px;
   border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background: #2980b9;
-}
-
-/* Example box you can play with */
-.box {
-  width: 200px;
-  height: 200px;
-  background: #e67e22;
-  margin: 20px auto;
-  border-radius: 10px;
-  transition: 0.3s ease;
-}
-.box:hover {
-  background: #d35400;
-  transform: scale(1.1);
 }
