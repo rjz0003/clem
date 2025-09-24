@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bao Point Tracker</title>
+  <title>Bao Point Collect</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Points Tracker</h1>
+    <h1>Earn Points</h1>
     <ul class="item-list">
       <li>
         <label>
@@ -19,13 +19,26 @@
           <input type="checkbox" value="20" class="item"> Item B (20 pts)
         </label>
       </li>
+      <li>
+        <label>
+          <input type="checkbox" value="15" class="item"> Item C (15 pts)
+        </label>
+      </li>
     </ul>
 
     <div class="total-box">
-      <strong>Total Points:</strong> <span id="total">0</span>
+      <strong>Current Session Total:</strong> <span id="sessionTotal">0</span>
     </div>
+
+    <button id="submitBtn">Submit</button>
+
+    <div class="overall-box">
+      <strong>Overall Points:</strong> <span id="overallTotal">0</span>
+    </div>
+
+    <p><a href="spend.html">Go to Spend Points →</a></p>
   </div>
 
-  <script src="script.js"></script>
+  <script src="earn.js"></script>
 </body>
 </html>
