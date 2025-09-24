@@ -29,14 +29,29 @@ h1 {
   padding: 10px;
   background: #ecf0f1;
   border-radius: 5px;
+  text-align: center;
 }
 
-.total-box {
-  margin-top: 20px;
+.total-box, .overall-box {
+  margin-top: 15px;
   font-size: 18px;
   text-align: center;
   padding: 10px;
   background: #3498db;
   color: white;
   border-radius: 5px;
+}
+
+button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #27ae60;
 }
