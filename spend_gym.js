@@ -1,10 +1,10 @@
-const foodDisplay = document.getElementById("gymPoints");
+const gymDisplay = document.getElementById("gymPoints");
 const spendButtons = document.querySelectorAll(".spendBtn");
 
 let totals = JSON.parse(localStorage.getItem("totals")) || { gym:0, art:0, total:0 };
 
 function updateDisplay() {
-  foodDisplay.textContent = totals.food;
+  gymDisplay.textContent = totals.gym;
 }
 updateDisplay();
 
