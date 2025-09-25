@@ -11,37 +11,37 @@
     <ul class="item-list">
       <li>
         <label>
-          <input type="checkbox" value="10" class="item"> Gym (3 pts)
+          <input type="checkbox" value="3" class="item" data-catagory="gym"> Gym (3 pts)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="20" class="item"> Weekly Chores (1 pt)
+          <input type="checkbox" value="1" class="item"> Weekly Chores (1 pt)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="15" class="item"> Finish painting (3 pts)
+          <input type="checkbox" value="3" class="item" data-catagory="art"> Finish painting (3 pts)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="15" class="item"> Scoop milton (1 pt)
+          <input type="checkbox" value="1" class="item"> Scoop milton (1 pt)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="15" class="item"> Sweep (1 pt)
+          <input type="checkbox" value="1" class="item"> Sweep (1 pt)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="15" class="item"> Meal Prep (2 pt)
+          <input type="checkbox" value="2" class="item"> Meal Prep (2 pt)
         </label>
       </li>
       <li>
         <label>
-          <input type="checkbox" value="15" class="item"> Laundry (1 pts)
+          <input type="checkbox" value="1" class="item"> Laundry (1 pts)
         </label>
       </li>
     </ul>
@@ -53,10 +53,15 @@
     <button id="submitBtn">Submit</button>
 
     <div class="overall-box">
-      <strong>Overall Points:</strong> <span id="overallTotal">0</span>
+      <strong>Overall Totals:</strong>
+      <p>Total Points: <span id="totalPoints">0</span></p>
+      <p>gym: <span id="gymTotal">0</span></p>
+      <p>art: <span id="artTotal">0</span></p>
     </div>
 
-    <p><a href="spend.html">Go to Spend Points →</a></p>
+    <p><a href="spend_total.html">Spend from Total Points →</a></p>
+    <p><a href="spend_gym.html">Spend gym Points →</a></p>
+    <p><a href="spend_art.html">Spend art Points →</a></p>
   </div>
 
   <script src="earn.js"></script>
