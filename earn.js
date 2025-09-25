@@ -41,6 +41,8 @@ items.forEach(item => item.addEventListener("change", updateSessionTotal));
 submitBtn.addEventListener("click", () => {
   for (let cat in sessionTotals) {
     totals[cat] += sessionTotals[cat];
+    gym[cat] += sessiongym[cat];
+    art[cat] += sessionart[cat];
   }
   localStorage.setItem("totals", JSON.stringify(totals));
 
