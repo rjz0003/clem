@@ -41,11 +41,12 @@ items.forEach(item => item.addEventListener("change", updateSessionTotal));
 submitBtn.addEventListener("click", () => {
   for (let cat in sessionTotals) {
     totals[cat] += sessionTotals[cat];
-    gym[cat] += sessiongym[cat];
-    art[cat] += sessionart[cat];
   }
+
+  // Save to localStorage
   localStorage.setItem("totals", JSON.stringify(totals));
 
+  // Reset session
   sessionTotals = { gym: 0, art: 0, total: 0 };
   sessionTotalDisplay.textContent = 0;
   items.forEach(item => (item.checked = false));
