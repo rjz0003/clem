@@ -1,38 +1,52 @@
 const items = document.querySelectorAll(".item");
 const sessionTotalDisplay = document.getElementById("sessionTotal");
-const overallTotalDisplay = document.getElementById("overallTotal");
 const submitBtn = document.getElementById("submitBtn");
 
-let sessionTotal = 0;
+// Track session totals
+let sessionTotals = {
+  gym: 0,
+  art: 0,
+  total: 0
+};
 
-// Load saved total from localStorage
-let overallTotal = parseInt(localStorage.getItem("points")) || 0;
-overallTotalDisplay.textContent = overallTotal;
+// Load from localStorage
+let totals = JSON.parse(localStorage.getItem("totals")) || {
+  gym: 0,
+  art: 0,
+  total: 0
+};
 
-// Update session total when checkboxes change
+function updateDisplay() {
+  document.getElementById("totalPoints").textContent = totals.total;
+  document.getElementById("gymTotal").textContent = totals.gym;
+  document.getElementById("artTotal").textContent = totals.art;
+}
+updateDisplay();
+
 function updateSessionTotal() {
-  sessionTotal = 0;
+  sessionTotals = { gym: 0, art: 0, total: 0 };
   items.forEach(item => {
     if (item.checked) {
-      sessionTotal += parseInt(item.value);
+      let val = parseInt(item.value);
+      let cat = item.dataset.category;
+      sessionTotals[cat] += val;
+      sessionTotals.total += val;
     }
   });
-  sessionTotalDisplay.textContent = sessionTotal;
+  sessionTotalDisplay.textContent = sessionTotals.total;
 }
 
-items.forEach(item => {
-  item.addEventListener("change", updateSessionTotal);
-});
+items.forEach(item => item.addEventListener("change", updateSessionTotal));
 
-// When submit is pressed
 submitBtn.addEventListener("click", () => {
-  overallTotal += sessionTotal;
-  localStorage.setItem("points", overallTotal);
+  for (let cat in sessionTotals) {
+    totals[cat] += sessionTotals[cat];
+  }
+  localStorage.setItem("totals", JSON.stringify(totals));
 
-  overallTotalDisplay.textContent = overallTotal;
-  sessionTotal = 0;
+  sessionTotals = { gym: 0, art: 0, total: 0 };
   sessionTotalDisplay.textContent = 0;
-
-  // Reset checkboxes
   items.forEach(item => (item.checked = false));
+
+  updateDisplay();
 });
