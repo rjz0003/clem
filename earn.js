@@ -16,6 +16,7 @@ let totals = JSON.parse(localStorage.getItem("totals")) || {
   total: 0
 };
 
+// Update the totals shown on the page
 function updateDisplay() {
   document.getElementById("totalPoints").textContent = totals.total;
   document.getElementById("gymTotal").textContent = totals.gym;
@@ -23,16 +24,25 @@ function updateDisplay() {
 }
 updateDisplay();
 
+// Update the session total before submit
 function updateSessionTotal() {
   sessionTotals = { gym: 0, art: 0, total: 0 };
+
   items.forEach(item => {
     if (item.checked) {
       let val = parseInt(item.value);
-      let cat = item.dataset.category;
-      sessionTotals[cat] += val;
+      let cat = item.dataset.category; // gym, art, or undefined
+
+      // Add to category if defined
+      if (cat && sessionTotals.hasOwnProperty(cat)) {
+        sessionTotals[cat] += val;
+      }
+
+      // Always add to total
       sessionTotals.total += val;
     }
   });
+
   sessionTotalDisplay.textContent = sessionTotals.total;
 }
 
